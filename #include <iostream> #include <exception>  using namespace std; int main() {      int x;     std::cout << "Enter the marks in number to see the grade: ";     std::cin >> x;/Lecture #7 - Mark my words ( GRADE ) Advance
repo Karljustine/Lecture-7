@@ -1,0 +1,47 @@
+#include <iostream>
+#include <exception>
+
+using namespace std;
+int main()
+{
+
+    int x;
+    std::cout << "Enter the marks in number to see the grade: ";
+    std::cin >> x;
+    //Using the cin.fail function (when user enters alphabet instead of numbers)
+    if (std::cin.fail())
+    {
+        std::cin.clear();
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        std::cout << "Incorrect command\n: ";
+    }
+
+    else if (x > 70)
+    {
+        cout << "You have a A Grade";
+    }
+    else if (x >= 60 && x < 70)
+    {
+        cout << "You have a B Grade";
+    }
+    else if (x >= 50 && x < 60)
+    {
+        cout << "You have a C Grade";
+    }
+    else if (x > 40 && x < 50)
+    {
+        cout << "You have a D Grade";
+    }
+    else if (x == 40)
+    {
+        cout << "You have a JUST PASSED Grade";
+    }
+    else if (x < 40)
+    {
+        cout << "You have a Fail Grade";
+    }
+    else
+    {
+        cout << "Wrong input";
+    }
+}
